@@ -8,6 +8,7 @@ struct student
 	char name[10];
 	float marks;
 };
+//quick_sort started
 struct student s[10];
 int n;
 int partition(struct student s[10],int l,int r)
@@ -60,10 +61,10 @@ int main()
 		cout<<"\n-----------------------------";
 		cout<<"\n1:Create Database";
 		cout<<"\n2:Display Database";
-		cout<<"\n3:Search By Marks";
-		cout<<"\n4:Search By Name";
+		cout<<"\n3:Search By roll no";
+		cout<<"\n4:Search By Name(binary search)";
 		cout<<"\n5:Sort By Roll no(bubble sort)";
-		cout<<"\n6:Display the first 3 toppers";
+		cout<<"\n6:Display the first 3 toppers(quick sort)";
 		cout<<"\n7:EXIT";
 		cout<<"\n-----------------------------";
 		cout<<"\nEnter your choice: ";
@@ -101,14 +102,15 @@ int main()
 			break;
 			}
 			case 3:
+			//linear search
 			{
 				float m;
-				cout<<"\nEnter the marks:- ";
+				cout<<"\nEnter the roll no:- ";
 				cin>>m;
 				for(int i=0;i<n;i++)
 				{
 
-					if(m==s[i].marks)
+					if(m==s[i].rollno)
 					{
 					cout<<"\n**********student database***********";
 					cout<<"\nRoll no\t\tName\t\tMarks";
@@ -118,7 +120,7 @@ int main()
 			break;
 			}
 			case 4:
-			{
+			{//binary search
 				char x[10];
 				int i=0,j=(n-1),mid,flag=0;
 				cout<<"Enter a name want to search: ";
@@ -147,7 +149,7 @@ int main()
 				break;
 			}
 			case 5:
-			{
+			{//bubble sort
 				struct student temp;
 				for(int j=1;j<n;j++)
 				{
@@ -164,7 +166,7 @@ int main()
 				break;
 			}
 			case 6:
-			{
+			{//quick sort
 				cout<<n-1;
 				quick_sort(s,0,n-1);
 			for(int i=n-1;i>=n-3;i--)
@@ -175,6 +177,12 @@ int main()
 			}
 		}
 	}while(ch!=7);
+}
+new1=new node;
+new1->data=pf[i];
+new1->r=NULL;
+new1->l=NULL;
+push(new1);
 }
 
 
